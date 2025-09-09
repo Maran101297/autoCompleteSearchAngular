@@ -1,0 +1,13 @@
+.wrapper { max-width: 900px; margin: 8px; }
+input {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.error { color: #b00020; margin-top: 6px; font-size: 13px; }
+.suggestions { margin-top: 6px; max-height: 220px; overflow-y: auto; border: 1px solid #eee; border-radius: 6px; padding: 6px; }
+.suggestion { padding: 6px 10px; cursor: pointer; border-radius: 4px; user-select: none; }
+.suggestion:hover { background: #f4f6f8; }
+.loading { padding: 6px; color: #666; font-size: 13px; text-align: center; }

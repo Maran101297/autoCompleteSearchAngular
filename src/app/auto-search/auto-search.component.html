@@ -1,0 +1,65 @@
+<!-- <div class="container">
+  <h2>Auto Search</h2>
+
+ <input type="text"
+         [(ngModel)]="searchText"
+         (focus)="onFocus()"
+         (input)="onInput($event)"
+         id="search"
+         placeholder="Type variable/operator/logical..."
+         autocomplete="off" />
+
+  <div id="suggestions" *ngIf="filteredList.length" (scroll)="onScroll($event)">
+    <div class="item" *ngFor="let item of filteredList" (click)="selectItem(item)">
+      {{ item }}
+    </div>
+  </div> 
+
+
+</div> -->
+
+<!-- <div class="wrapper">
+  <input
+    type="text"
+    [(ngModel)]="searchText"
+    (input)="onInput($event)"
+    (focus)="onFocus()"
+    placeholder='e.g. ( InstanceType == "t2.micro" ) AND Region == "ap-south-1"'
+  />
+
+  <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+  <div class="suggestions">
+    <div
+      *ngFor="let item of filteredList"
+      class="suggestion"
+      (click)="selectItem(item)"
+      title="{{ item }}"
+    >
+      {{ item }}
+    </div>
+  </div>
+</div> -->
+<div class="wrapper">
+  <input
+    type="text"
+    [(ngModel)]="searchText"
+    (input)="onInput($event)"
+    (focus)="onFocus()"
+    placeholder='Type query...'
+  />
+
+  <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+  <div class="suggestions" (scroll)="onScrollSuggestions($event)">
+    <div
+      *ngFor="let item of filteredList"
+      class="suggestion"
+      (click)="selectItem(item)"
+      title="{{ item }}"
+    >
+      {{ item }}
+    </div>
+    <div *ngIf="loadingMore" class="loading">Loading…</div>
+  </div>
+</div>
